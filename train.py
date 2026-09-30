@@ -1,7 +1,8 @@
 import time
 import numpy as np
 
-from gpt.transformer import GPT, CrossEntropyLoss, AdamW, generate
+from gpt.transformer import CrossEntropyLoss, AdamW, generate
+from model import GPT
 
 # hyperparameters
 batch_size = 32
@@ -27,12 +28,12 @@ vocab_size = len(chars)
 # create a mapping from characters to integers
 stoi = {ch: i for i, ch in enumerate(chars)}
 itos = {i: ch for i, ch in enumerate(chars)}
-encode = lambda s: [stoi[c] for c in s]           # string -> list of integers
-decode = lambda l: "".join(itos[i] for i in l)    # list of integers -> string
+encode = lambda s: [stoi[c] for c in s]
+decode = lambda l: "".join(itos[i] for i in l)
 
 # train and validation splits
 data = np.array(encode(text), dtype=np.int64)
-n = int(0.9 * len(data))  # first 90% is train, the rest is validation
+n = int(0.9 * len(data))
 train_data = data[:n]
 val_data = data[n:]
 
