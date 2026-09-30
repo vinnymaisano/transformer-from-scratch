@@ -1,6 +1,6 @@
 # Transformer from Scratch
 
-A GPT-style, decoder-only transformer written in **pure NumPy**. Every layer's forward and backward pass is implemented from scratch.
+A GPT-style, decoder-only transformer based on the paper [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) (2017), written in **pure NumPy**. Every layer's forward and backward pass is implemented from scratch.
 
 It trains a character-level language model on Tiny Shakespeare in about 90 seconds on a MacBook Air.
 
